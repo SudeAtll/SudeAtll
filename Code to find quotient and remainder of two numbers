@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int islem(int bolunen, int bolen) {
+    int bolum = 0;
+    int kalan = 0;
+
+    if (bolen == 0) {
+        printf("Bolen sifir olmamalı yoksa sonsuz olur \n");
+        return 0;
+    }
+    while (bolunen >= bolen) {
+        bolunen -= bolen;
+        bolum++;
+    }
+
+    kalan = bolunen;
+
+    return bolum *10+ kalan ;
+}
+
+int main() {
+    int bolunen, bolen;
+    printf("Bolunen sayiyi girin   ");
+    scanf("%d", &bolunen);
+    printf("Bolen sayiyi girin   ");
+    scanf("%d", &bolen);
+
+    int sonuc =islem(bolunen, bolen);
+
+    int bolum = sonuc / 10;
+    int kalan = sonuc % 10;
+
+    printf("Bolum %d\n", bolum);
+    printf("Kalan %d\n", kalan);
+
+    return 0;
+}
